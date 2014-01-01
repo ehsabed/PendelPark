@@ -28,14 +28,14 @@
                 </div>
                 <div data-bind="if: loggedIn" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" data-bind="click: navigateToHome">Home</a></li>
+                        <li><a href="#" data-bind="click: navigateToHome">Hem</a></li>
                         <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" data-bind="with: user">
                         <li>
                             <span class="navbar-text nofloat">Hello, <a href="#" class="navbar-link" data-bind="text: name, click: manage"></a>!</span>
                         </li>
-                        <li><a href="#" data-bind="click: logOff">Log off</a></li>
+                        <li><a href="#" data-bind="click: logOff">Logga ut</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,6 @@
         </div>
         @Html.Partial("_Home")
         @Html.Partial("_Login")
-        @Html.Partial("_Register")
         @Html.Partial("_RegisterExternal")
         @Html.Partial("_Manage")
         <hr />

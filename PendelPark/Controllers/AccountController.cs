@@ -312,7 +312,7 @@ namespace PendelPark.Controllers
         }
 
         // POST api/Account/Register
-        [AllowAnonymous]
+        // [AllowAnonymous]
         [Route("Register")]
         public async Task<IHttpActionResult> Register(RegisterBindingModel model)
         {

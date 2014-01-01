@@ -2,69 +2,7 @@
 <div data-bind="visible: loading">Laddar...</div>
 <div data-bind="visible: !loading()">
     <p class="text-success" data-bind="text: message"></p>
-    <h2>Hantera konto</h2>
-    <section>
-        <div data-bind="with: changePassword">
-            <p class="text-info">Du är inloggad som <strong data-bind="text: name"></strong>.</p>
-            <form class="form-horizontal" role="form">
-                <h4>Ändra ditt lösenord</h4>
-                <hr />
-                <ul class="text-danger" data-bind="foreach: errors">
-                    <li data-bind="text: $data"></li>
-                </ul>
-                <div class="form-group">
-                    <label for="ChangePasswordOldPassword" class="col-md-2 control-label">Gammalt lösenord</label>
-                    <div class="col-md-10">
-                        <input type="password" id="ChangePasswordOldPassword" class="form-control" data-bind="value: oldPassword" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="ChangePasswordNewPassword" class="col-md-2 control-label">Nytt lösenord</label>
-                    <div class="col-md-10">
-                        <input type="password" id="ChangePasswordNewPassword" class="form-control" data-bind="value: newPassword" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="ChangePasswordConfirmPassword" class="col-md-2 control-label">Upprepa nytt lösenord</label>
-                    <div class="col-md-10">
-                        <input type="password" id="ChangePasswordConfirmPassword" class="form-control" data-bind="value: confirmPassword" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" class="btn btn-default" data-bind="click: change, disable: changing">Ändra lösenord</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div data-bind="with: setPassword">
-            <p>Du har inget lokalt användarnamn/lösenord för PendelPark. Lägg till ett konto så kan du logga in utan extern tjänst.</p>
-            <form class="form-horizontal" role="form">
-                <h4>Skapa Lokalt Login</h4>
-                <hr />
-                <ul class="text-danger" data-bind="foreach: errors">
-                    <li data-bind="text: $data"></li>
-                </ul>
-                <div class="form-group">
-                    <label for="SetPasswordNewPassword" class="col-md-2 control-label">Nytt lösenord</label>
-                    <div class="col-md-10">
-                        <input type="password" id="SetPasswordNewPassword" class="form-control" data-bind="value: newPassword" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="SetPasswordConfirmPassword" class="col-md-2 control-label">Upprepa nytt lösenord</label>
-                    <div class="col-md-10">
-                        <input type="password" id="SetPasswordConfirmPassword" class="form-control" data-bind="value: confirmPassword" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" class="btn btn-default" data-bind="click: set, disable: setting">Spara lösenord</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
+    <h2>Hantera konto</h2>    
     <section>
         <ul class="text-danger" data-bind="foreach: errors">
             <li data-bind="text: $data"></li>

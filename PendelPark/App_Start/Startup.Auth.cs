@@ -47,14 +47,20 @@ namespace PendelPark
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            string microsoftAppId = ConfigurationManager.AppSettings["MicrosoftAppId"];
+            string microsoftAppSecret = ConfigurationManager.AppSettings["MicrosoftAppSecret"];
 
-            //app.UseTwitterAuthentication(
-            //    consumerKey: "",
-            //    consumerSecret: "");
+            // Uncomment the following lines to enable logging in with third party login providers
+            app.UseMicrosoftAccountAuthentication(
+                clientId: microsoftAppId,
+                clientSecret: microsoftAppSecret);
+
+            string twitterKey = ConfigurationManager.AppSettings["TwitterKey"];
+            string twitterSecret = ConfigurationManager.AppSettings["TwitterSecret"];
+
+            app.UseTwitterAuthentication(
+                consumerKey: twitterKey,
+                consumerSecret: twitterSecret);
 
             string facebookAppId = ConfigurationManager.AppSettings["FacebookAppId"];
             string facebookAppSecret = ConfigurationManager.AppSettings["FacebookAppSecret"];
