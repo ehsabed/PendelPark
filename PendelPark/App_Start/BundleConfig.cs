@@ -17,6 +17,22 @@ namespace PendelPark
                 "~/Scripts/knockout-{version}.js",
                 "~/Scripts/knockout.validation.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                "~/Scripts/angular.js", 
+                "~/Scripts/angular-animate.js",
+                "~/Scripts/angular-route.js",
+                "~/Scripts/angular-sanitize.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/mainapp").Include(
+               "~/app/app.js",
+               "~/app/config.js",
+               "~/app/config.exceptionHandler.js",
+               "~/app/common/common.js",
+               "~/app/common/logger.js",
+               "~/app/common/spinner.js",
+               "~/app/common/bootstrap/bootstrap.dialog.js",
+               "~/app/layout/shell.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/app/ajaxPrefilters.js",
                 "~/Scripts/app/app.bindings.js",
@@ -37,10 +53,15 @@ namespace PendelPark
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
+                "~/Scripts/ui-bootstrap-{version}.js",
                 "~/Scripts/respond.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/toastr").Include(
+               "~/Scripts/toastr.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/bootstrap.css",
+                 "~/Content/toastr.css",
                  "~/Content/Site.css"));
         }
     }

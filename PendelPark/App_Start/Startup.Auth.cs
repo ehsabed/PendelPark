@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.MicrosoftAccount;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -51,9 +52,17 @@ namespace PendelPark
             string microsoftAppSecret = ConfigurationManager.AppSettings["MicrosoftAppSecret"];
 
             // Uncomment the following lines to enable logging in with third party login providers
-            app.UseMicrosoftAccountAuthentication(
-                clientId: microsoftAppId,
-                clientSecret: microsoftAppSecret);
+            if (!string.IsNullOrEmpty(microsoftAppId) &&
+                !string.IsNullOrEmpty(microsoftAppSecret))
+            {
+                var msAccountOptions = new MicrosoftAccountAuthenticationOptions
+                {
+                    ClientId = microsoftAppId,
+                    ClientSecret = microsoftAppSecret
+                };
+
+                app.UseMicrosoftAccountAuthentication(msAccountOptions);
+            }
 
             string twitterKey = ConfigurationManager.AppSettings["TwitterKey"];
             string twitterSecret = ConfigurationManager.AppSettings["TwitterSecret"];

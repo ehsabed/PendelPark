@@ -3,8 +3,8 @@
     Response.Headers["X-UA-Compatible"] = "IE=10";
 }
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" data-ng-app="app">
+<head>    
     <meta charset="utf-8" />
     <title>PendelPark</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -13,6 +13,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <div data-ng-include="'/app/layout/shell.html'"></div>
     <div data-bind="visible: loading">Laddar...</div>
     <div style="display: none" data-bind="visible: true" class="container body-content">
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -54,9 +55,13 @@
         </footer>
     </div>
 
+    @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/knockout")
     @Scripts.Render("~/bundles/app")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/toastr")
+    @* The Angular app *@
+    @Scripts.Render("~/bundles/mainapp")
 </body>
 </html>
