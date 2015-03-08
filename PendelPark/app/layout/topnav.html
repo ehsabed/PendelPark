@@ -1,0 +1,19 @@
+﻿<div id="menu" class="navbar navbar-default">
+    <div class="navbar-header">
+        <button class="btn btn-success navbar-toggle" data-ng-click="navbarExpanded = !navbarExpanded">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+        <div id="logo">
+            <a href='#/'>
+                <h4>Utforska PendelParkeringar</h4>
+            </a>
+        </div>
+    </div>
+    <div class="navbar-collapse collapse" data-collapse="!navbarExpanded">
+        <ul class="nav navbar-nav navbar-right">
+            <li data-ng-class="{'active':isActive('/explore')}"><a href="#/explore">Utforska</a></li>
+            <li data-ng-class="{'active':isActive('/parkings')}"><a href="#/parkings">Mina parkeringar</a></li>
+            <li data-ng-class="{'active':isActive('/about')}"><a href="#/about">Om</a></li>
+        </ul>
+    </div>
+</div>

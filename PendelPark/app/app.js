@@ -12,7 +12,8 @@
         'common.bootstrap', // bootstrap dialog wrapper functions
 
         // 3rd Party Modules
-        'ui.bootstrap'      // ui-bootstrap (ex: carousel, pagination, dialog)
+        'ui.bootstrap',      // ui-bootstrap (ex: carousel, pagination, dialog)
+        'google-maps'       // Google maps library, http://angular-google-maps.org/
     ]);
 
     // Handle routing errors and success events

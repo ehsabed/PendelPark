@@ -4,18 +4,19 @@
 }
 <!DOCTYPE html>
 <html lang="en" data-ng-app="app">
-<head>    
+<head>
     <meta charset="utf-8" />
     <title>PendelPark</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
+    <base href="/" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <div data-ng-include="'/app/layout/shell.html'"></div>
-    <div data-bind="visible: loading">Laddar...</div>
-    <div style="display: none" data-bind="visible: true" class="container body-content">
+    <div class="loading" ng-show="app.loading">Laddar...</div>
+    <div style="display: none" data-ng-hide="app-loading" class="container body-content">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -24,36 +25,43 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <p class="navbar-brand" data-bind="if: !loggedIn()">PendelPark</p>
-                    <a href="#" class="navbar-brand" data-bind="if: loggedIn, click: navigateToHome">PendelPark</a>
+                    <a href="/" class="navbar-brand">PendelPark</a>
                 </div>
-                <div data-bind="if: loggedIn" class="navbar-collapse collapse">
+                <div data-ng-if="security.user" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" data-bind="click: navigateToHome">Hem</a></li>
+                        <li><a href="/">Hem</a></li>
                         <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right" data-bind="with: user">
+                    <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <span class="navbar-text nofloat">Hello, <a href="#" class="navbar-link" data-bind="text: name, click: manage"></a>!</span>
+                            <span class="navbar-text nofloat">Hallå, <a href="/manage" class="navbar-link" data-ng-bind="security.user.userName"></a>!</span>
                         </li>
-                        <li><a href="#" data-bind="click: logOff">Logga ut</a></li>
+                        <li><a href="" ng-click="security.logout()">Logga ut</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div data-bind="foreach: errors" class="padding-error">
-            <p class="text-danger" data-bind="text: $data"></p>
-        </div>
-        @Html.Partial("_Home")
-        @Html.Partial("_Login")
-        @Html.Partial("_RegisterExternal")
-        @Html.Partial("_Manage")
-        <hr />
+        <section id="body" ng-view></section>
+
         <footer>
             <p>&copy; @DateTime.Now.Year - PendelPark</p>
         </footer>
+
     </div>
+
+    <div class="appAlerts ng-cloak">
+        <alert ng-repeat="alert in alerts" type="alert.type" close="alert.close(alert, $index)">
+            <span class="message" ng-bind-html="alert.message"></span>
+        </alert>
+    </div>
+
+    @Html.Partial("_Home")
+    @Html.Partial("_Login")
+    @Html.Partial("_RegisterExternal")
+    @Html.Partial("_Manage")
+    <hr />
+
 
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/jquery")

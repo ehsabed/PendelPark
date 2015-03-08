@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace PendelPark.Model
 {
@@ -188,5 +186,7 @@ namespace PendelPark.Model
         /// The long.
         /// </value>
         public string Long { get; set; }
+
+        public Collection<ParkingImage> ParkingImages { get; set; }
     }
 }

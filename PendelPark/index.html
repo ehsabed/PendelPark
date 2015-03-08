@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+    <head>
+        <style>
+            /* This helps the ng-show/ng-hide animations start at the right place. */
+            /* Since Angular has this but needs to load, this gives us the class early. */
+            .ng-hide {
+                display: none !important;
+            }
+        </style>
+
+        <meta name="keywords" content="angularjs,SPA,Single Page Application,bootstrap,bootstrap ui,tutorial,JS framework,api,web api,Anders Berglind" />
+        <meta name="description" content="SPA built using angularjs, back end built using Asp.net web api,creatd by Anders Berglind" />
+        <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+        <meta charset="utf-8" />
+        <title>PendelPark</title>       
+        <link href="content/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+        <!--<link href="content/css/amelia-bootstrap-theme.min.css" rel="stylesheet" />-->
+        <link href="Content/toastr.min.css" rel="stylesheet" />
+        <link href="content/loading-bar.min.css" rel="stylesheet" />
+        <link href="content/site.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+        <div>
+            <div data-ng-include="'/app/layout/shell.html'"></div>
+        </div>
+        
+        <!--<span data-pp-scroll-to-top></span>-->        
+
+        <!-- 3rd party libraries -->
+        <script src="Scripts/jquery-1.10.2.min.js"></script>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="Scripts/angular-route.min.js"></script>
+        <script src="Scripts/angular-animate.min.js"></script>
+        <script src="Scripts/angular-sanitize.min.js"></script>
+        <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+        <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+        <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.9.0/ui-bootstrap-tpls.min.js"></script>-->
+        <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script src="Scripts/lodash.min.js"></script>
+        <script src="Scripts/angular-google-maps.js"></script>
+        <script src="scripts/toastr.js"></script>
+        <script src="scripts/loading-bar.min.js"></script>
+
+
+        <!-- Load app main script -->
+        <script src="app/app.js"></script>
+        <script src="app/config.js"></script>
+        <script src="app/config.route.js"></script>
+        <script src="app/config.exceptionHandler.js"></script>
+        
+        <!-- Load common -->
+        <script src="app/common/common.js"></script>
+        <script src="app/common/logger.js"></script>
+        <script src="app/common/spinner.js"></script>
+        <script src="app/common/bootstrap/bootstrap.dialog.js"></script>       
+        
+        <!-- Load layout -->
+        <script src="app/explore/explore.js"></script>
+        <script src="app/layout/shell.js"></script>
+        <script src="app/layout/sidebar.js"></script>
+        <script src="app/layout/topnav.js"></script>
+
+        <!-- Load services -->
+        <script src="app/services/datacontext.js"></script>
+        <script src="app/services/directives.js"></script>
+        <!--<script src="app/services/placesExplorerService.js"></script>
+    <script src="app/services/placesPhotosService.js"></script>
+    <script src="app/services/placesDataService.js"></script>-->
+
+
+        <!-- Load controllers -->
+        <!--<script src="app/controllers/placesPhotosController.js"></script>
+        <script src="app/controllers/placesExplorerController.js"></script>
+        <script src="app/controllers/userContextController.js"></script>
+        <script src="app/controllers/myPlacesController.js"></script>
+        <script src="app/controllers/navigationController.js"></script>
+        <script src="app/controllers/aboutController.js"></script>-->
+
+        <!-- Load custom filters -->
+        <!--<script src="app/filters/placeNameCategoryFilter.js"></script>-->
+
+        <!-- Load custom directives -->
+        <!--<script src="app/directives/fsUnique.js"></script>-->
+    </body>
+</html>

@@ -10,6 +10,8 @@
     // For use with the HotTowel-Angular-Breeze add-on that uses Breeze
     var remoteServiceName = 'breeze/Breeze';
 
+    var apiUrl = "https://localhost:44300/api/Parking/";
+
     var events = {
         controllerActivateSuccess: 'controller.activateSuccess',
         spinnerToggle: 'spinner.toggle'
@@ -17,6 +19,7 @@
 
     var config = {
         appErrorPrefix: '[PP Error] ', //Configure the exceptionHandler decorator
+        apiUrl: apiUrl,
         docTitle: 'PendelPark: ',
         events: events,
         remoteServiceName: remoteServiceName,

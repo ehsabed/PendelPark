@@ -1,0 +1,32 @@
+﻿<section id="explore-view" data-ng-controller="explore as vm">
+    <div>
+        <h4>{{vm.totalNoOfFreeParkings}} pendelparkeringar lediga av totalt {{vm.totalNoOfParkings}}</h4>
+        Okänd status på {{vm.unknownParkings}} st parkeringar.
+    </div>
+    <div>
+        <input type="text" data-ng-model="vm.exploreNearby" />
+    </div>
+    <div>
+        <h5>Places found Near by ({{vm.exploreNearby}})</h5>
+    </div>
+    <google-map center="vm.map.center" zoom="vm.map.zoom" draggable="vm.map.draggable">
+        <markers models="vm.markers"
+                 idkey="'id'"
+                 click="'onClicked'"
+                 fit="true"
+                 coords="'coords'"
+                 icon="'icon'"
+                 labelcontent="'name'">
+            <windows show="'showWindow'" closeclick="'closeClick'" ng-cloak>
+                <div>
+                    <p ng-non-bindable>{{ name }}</p>
+                    <p ng-non-bindable>{{ freeSpaces | number:0 }} lediga platser av {{ parkingSpaces | number:0 }}!</p>
+                    <p class="muted">My marker will stay open when the window is popped up!</p>
+                </div>
+            </windows>
+        </markers>
+    </google-map>
+    <div data-ng-repeat="parking in vm.parkings">
+        <h5>{{parking.name}} - {{parking.freeSpaces}}</h5>
+    </div>
+</section>

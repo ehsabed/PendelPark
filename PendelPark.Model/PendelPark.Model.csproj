@@ -54,13 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201312291451062_Initial.cs" />
-    <Compile Include="Migrations\201312291451062_Initial.Designer.cs">
-      <DependentUpon>201312291451062_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201407272048383_Initial.cs" />
+    <Compile Include="Migrations\201407272048383_Initial.Designer.cs">
+      <DependentUpon>201407272048383_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ParkContext.cs" />
     <Compile Include="Parking.cs" />
+    <Compile Include="ParkingImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201312291451062_Initial.resx">
-      <DependentUpon>201312291451062_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201407272048383_Initial.resx">
+      <DependentUpon>201407272048383_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
